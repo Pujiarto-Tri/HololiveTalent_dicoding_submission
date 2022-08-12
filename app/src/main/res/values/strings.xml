@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HololiveTalent</string>
+    <string name="talent_name">Talent Name</string>
+    <string name="talent_unit">Unit</string>
+    <string name="description">Description</string>
+    <string name="youtube">Youtube</string>
+    <string name="share">Share</string>
+    <string name="titlebar">Hololive</string>
+</resources>
