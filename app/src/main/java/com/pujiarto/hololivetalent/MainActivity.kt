@@ -1,13 +1,17 @@
 package com.pujiarto.hololivetalent
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.pujiarto.hololivetalent.data.ListTalentAdapter
 import com.pujiarto.hololivetalent.data.Talent
 import com.pujiarto.hololivetalent.data.TalentsData
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var rvTalents: RecyclerView
@@ -24,7 +28,6 @@ class MainActivity : AppCompatActivity() {
 
         list.addAll(TalentsData.listData)
         showRecylerList()
-
     }
 
     private fun showRecylerList() {
@@ -46,5 +49,19 @@ class MainActivity : AppCompatActivity() {
 
     private fun setActionBarTitle(title: String) {
         supportActionBar?.title = title
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id: Int = item.getItemId()
+        if (id == R.id.about_button) {
+            val aboutIntent = Intent(this@MainActivity, AboutActivity::class.java)
+            startActivity(aboutIntent)
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
