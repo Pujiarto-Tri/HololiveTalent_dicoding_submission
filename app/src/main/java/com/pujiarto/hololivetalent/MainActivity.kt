@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -43,8 +42,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showSelectedTalent(talent: Talent) {
-        Toast.makeText(this, "You Choose" + talent.name, Toast.LENGTH_SHORT)
-            .show()
+        val detailTalentIntent = Intent(this@MainActivity, TalentDetailActivity::class.java)
+        detailTalentIntent.putExtra(TalentDetailActivity.EXTRA_NAME, talent.name)
+        startActivity(detailTalentIntent)
     }
 
     private fun setActionBarTitle(title: String) {
@@ -59,6 +59,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id: Int = item.getItemId()
         if (id == R.id.about_button) {
+            title = "About"
             val aboutIntent = Intent(this@MainActivity, AboutActivity::class.java)
             startActivity(aboutIntent)
         }
