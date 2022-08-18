@@ -1,6 +1,7 @@
 package com.pujiarto.hololivetalent
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -44,6 +45,8 @@ class MainActivity : AppCompatActivity() {
     private fun showSelectedTalent(talent: Talent) {
         val detailTalentIntent = Intent(this@MainActivity, TalentDetailActivity::class.java)
         detailTalentIntent.putExtra(TalentDetailActivity.EXTRA_NAME, talent.name)
+        detailTalentIntent.putExtra(TalentDetailActivity.EXTRA_JPNAME, talent.jp_name)
+        detailTalentIntent.putExtra(TalentDetailActivity.EXTRA_IMAGE, talent.photo.toString())
         startActivity(detailTalentIntent)
     }
 
