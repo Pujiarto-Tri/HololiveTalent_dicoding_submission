@@ -1,7 +1,6 @@
 package com.pujiarto.hololivetalent
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -11,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.pujiarto.hololivetalent.data.ListTalentAdapter
 import com.pujiarto.hololivetalent.data.Talent
 import com.pujiarto.hololivetalent.data.TalentsData
-
 
 class MainActivity : AppCompatActivity() {
     private lateinit var rvTalents: RecyclerView
@@ -62,7 +60,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id: Int = item.getItemId()
+        val id: Int = item.itemId
         if (id == R.id.about_button) {
             val aboutIntent = Intent(this@MainActivity, AboutActivity::class.java)
             startActivity(aboutIntent)

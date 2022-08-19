@@ -1,14 +1,9 @@
 package com.pujiarto.hololivetalent
 
-import android.net.Uri
 import android.os.Bundle
-import android.util.Log
-import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.NavUtils
-import org.w3c.dom.Text
 
 class TalentDetailActivity : AppCompatActivity() {
 
@@ -50,13 +45,8 @@ class TalentDetailActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.getItemId()) {
-            android.R.id.home -> {
-                NavUtils.navigateUpFromSameTask(this)
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
