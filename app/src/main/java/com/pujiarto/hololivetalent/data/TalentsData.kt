@@ -241,6 +241,8 @@ object TalentsData {
                 val talent = Talent()
                 talent.name = talentNames[position]
                 talent.unit = talentUnits[position]
+                talent.jp_name = talentJp_Names[position]
+                talent.description = talentDescriptions[position]
                 talent.photo = talentImages[position]
                 list.add(talent)
             }

@@ -21,20 +21,44 @@
         android:id="@+id/imageTalentDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/talent_image"
         app:layout_constraintEnd_toEndOf="@+id/nameTalentDetail"
         app:layout_constraintStart_toStartOf="@+id/nameTalentDetail"
         app:layout_constraintTop_toBottomOf="@+id/jpNameTalentDetail"
-        android:layout_marginTop="16dp"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/descriptionTalentDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unitTalentDetail"
+        tools:text="@tools:sample/lorem" />
+
+    <TextView
+        android:id="@+id/unitTalentDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageTalentDetail"
+        app:layout_constraintStart_toStartOf="@+id/imageTalentDetail"
+        app:layout_constraintTop_toBottomOf="@+id/imageTalentDetail"
+        tools:text="@tools:sample/lorem" />
 
     <TextView
         android:id="@+id/jpNameTalentDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="@+id/nameTalentDetail"
         app:layout_constraintStart_toStartOf="@+id/nameTalentDetail"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/nameTalentDetail" />
+        app:layout_constraintTop_toBottomOf="@+id/nameTalentDetail"
+        tools:text="@tools:sample/lorem" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,6 +31,7 @@ class ListTalentAdapter(private val listTalent: ArrayList<Talent>): RecyclerView
 
         holder.tvName.text = talent.name
         holder.tvUnit.text = talent.unit
+
         //callback
         holder.itemView.setOnClickListener{
             onItemClickCallback.onItemClicked(listTalent[holder.adapterPosition])

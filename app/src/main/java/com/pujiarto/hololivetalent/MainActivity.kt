@@ -46,7 +46,9 @@ class MainActivity : AppCompatActivity() {
         val detailTalentIntent = Intent(this@MainActivity, TalentDetailActivity::class.java)
         detailTalentIntent.putExtra(TalentDetailActivity.EXTRA_NAME, talent.name)
         detailTalentIntent.putExtra(TalentDetailActivity.EXTRA_JPNAME, talent.jp_name)
-        detailTalentIntent.putExtra(TalentDetailActivity.EXTRA_IMAGE, talent.photo.toString())
+        detailTalentIntent.putExtra(TalentDetailActivity.EXTRA_UNIT, talent.unit)
+        detailTalentIntent.putExtra(TalentDetailActivity.EXTRA_IMAGE, talent.photo)
+        detailTalentIntent.putExtra(TalentDetailActivity.EXTRA_DESCRIPTION, talent.description)
         startActivity(detailTalentIntent)
     }
 
@@ -62,7 +64,6 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id: Int = item.getItemId()
         if (id == R.id.about_button) {
-            title = "About"
             val aboutIntent = Intent(this@MainActivity, AboutActivity::class.java)
             startActivity(aboutIntent)
         }
