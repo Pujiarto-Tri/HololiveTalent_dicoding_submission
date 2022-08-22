@@ -1,6 +1,8 @@
 package com.pujiarto.hololivetalent
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -39,6 +41,15 @@ class TalentDetailActivity : AppCompatActivity() {
         talentUnit.text = unit
         talentImg.setImageResource(talentPhoto)
         talentDescription.text = description
+
+        val actionShareButton : Button = findViewById(R.id.action_share)
+        actionShareButton.setOnClickListener{
+            val actionShareIntent = Intent()
+            actionShareIntent.action = Intent.ACTION_SEND
+            actionShareIntent.putExtra(Intent.EXTRA_TEXT,"Share this page")
+            actionShareIntent.type = "text/plain"
+            startActivity(Intent.createChooser(actionShareIntent, "Share"))
+        }
     }
     private fun setActionBarTitle(title: String) {
         supportActionBar?.title = title
