@@ -244,6 +244,7 @@ object TalentsData {
                 talent.jp_name = talentJp_Names[position]
                 talent.description = talentDescriptions[position]
                 talent.photo = talentImages[position]
+                talent.youtube = talentYoutubes[position]
                 list.add(talent)
             }
             return list

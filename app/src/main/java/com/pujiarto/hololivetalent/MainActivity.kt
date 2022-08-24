@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity() {
         detailTalentIntent.putExtra(TalentDetailActivity.EXTRA_UNIT, talent.unit)
         detailTalentIntent.putExtra(TalentDetailActivity.EXTRA_IMAGE, talent.photo)
         detailTalentIntent.putExtra(TalentDetailActivity.EXTRA_DESCRIPTION, talent.description)
+        detailTalentIntent.putExtra(TalentDetailActivity.EXTRA_YT, talent.youtube)
         startActivity(detailTalentIntent)
     }
 
